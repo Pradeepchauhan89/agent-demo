@@ -1,1 +1,30 @@
-{"name":null,"description":null,"icon":null,"color":null,"url":null,"capabilities":null,"inputs":[{"name":"query","type":"shortText","label":"Query","validation":{"required":true,"error":"Query is required"}}],"outputs":[{"label":"summary","type":"shortText"}]}
+{
+    "name": "Agent demo",
+    "description": "It summarizes Italian parliamentary debates for efficient access to legislative insights in Italy.",
+    "icon": "https://google-news-initiative.s3.eu-central-1.amazonaws.com/Apostrophe.png",
+    "color": "#ef9033",
+    "url": "",
+    "capabilities": "Agent can perform scraping and generate news items up to 50",
+    "inputs": [
+  {
+    "name": "name",
+    "type": "shortText",
+    "label": "Name",
+    "validation": {
+      "required": true,
+      "error": "Name is required"
+    }
+  },
+  {
+    "name": "surname",
+    "type": "shortText",
+    "label": "Surname"
+  }
+],
+    "outputs": [
+  {
+    "label": "greeting",
+    "type": "shortText"
+  }
+]
+  }

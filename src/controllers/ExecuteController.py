@@ -17,12 +17,35 @@ class ExecuteController:
 
   def execute(self, payload: AgentSchema):
     try:
-      #add_input_here
-      resp = ''
+
+      resp={}
+      payload = payload.dict()
+      for param in payload[inputs]:
+  
+        name = ''
+        if param['name'] == "name":
+          name = param['data']
+        
+        surname = ''
+        if param['name'] == "surname":
+          surname = param['data']
+        
+
       # resp =  callYourAgent()
       #add_output_here
       # Call spritz API
-      #add_callback_here
+      call_webhook_with_success({
+        "status": "completed",
+        "data": {
+          "title": "Agent executed successfully.",
+          "info": "It is the default title, change it.",
+          "output": {
+            "name": "greeting",
+            "type": "shortText", 
+            "data": "Greeting of the day 🙏🙏"
+          }
+        }
+      })
 
       logger.info('Function execute: Execution complete', resp)
       return { "summary": "Agent execution has been completed.", "detail": resp }
